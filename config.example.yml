@@ -1,0 +1,20 @@
+database:
+  driver: postgres
+  connection: host=192.168.40.43 port=5436 user=postgres password=1234 dbname=fruit sslmode=disable # 192.168.40.43 yourself ip
+  logger:
+    kafka:
+      brokers:
+        - 192.168.40.43:9092
+      topic: sqllog
+eventBroker:
+  kafka:
+    brokers:
+      - 192.168.40.43:9092
+    topic: fruit
+behaviorLog:
+  kafka:
+    brokers:
+      - 192.168.40.43:9092
+    topic: behaviorlog
+serviceName: go-api
+httpport: 8080
